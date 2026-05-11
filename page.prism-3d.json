@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "main": {
+      "type": "prism-3d-viewer"
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
