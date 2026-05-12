@@ -1,0 +1,1 @@
+Replace this with your AUTOLAB logo PNG as /public/autolab-logo.png

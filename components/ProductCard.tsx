@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { SensorProduct } from "@/data/products";
+import { AUTOLABduct } from "@/data/products";
 
-export default function ProductCard({ product }: { product: SensorProduct }) {
+export default function ProductCard({ product }: { product: AUTOLABduct }) {
   return (
     <article className="product-card">
       <img src={product.image} alt={product.name} />

@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="container footer-grid">
         <div>
           <div className="logo">Sensor<span>Pro</span><small>Auto Parts</small></div>
-          <p>Refaccionaria especializada en sensores automotrices OEM y aftermarket.</p>
+          <p>Tecnología OEM para diagnóstico automotriz.</p>
         </div>
         <div>
           <h3>Compra fácil</h3>

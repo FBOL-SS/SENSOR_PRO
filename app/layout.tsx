@@ -5,8 +5,8 @@ import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 export const metadata: Metadata = {
-  title: "SensorPro Auto Parts | Sensores Automotrices",
-  description: "Refaccionaria especializada en sensores automotrices OEM y aftermarket."
+  title: "AUTOLAB Auto Parts | Sensores Automotrices",
+  description: "Tecnología OEM para diagnóstico automotriz."
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
