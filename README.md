@@ -1,8 +1,8 @@
-# SensorPro Auto Parts
+# SensorPro AutoZone Style
 
-Sitio web corporativo multipágina para venta de sensores automotrices.
+Sitio multipágina estilo refaccionaria: claro, rápido y fácil de usar.
 
-## Instalación
+## Instalar
 
 ```bash
 npm install
@@ -14,10 +14,3 @@ npm run dev
 ```bash
 npm run build
 ```
-
-## Vercel
-
-Framework: Next.js  
-Build Command: npm run build  
-Output Directory: dejar vacío  
-Install Command: npm install

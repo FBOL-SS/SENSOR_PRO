@@ -1,11 +1,12 @@
 export default function ContactoPage() {
   return (
-    <main className="section light">
+    <main className="section">
       <div className="container">
         <div className="section-head">
-          <span className="badge">Contacto</span>
-          <h1>Solicita cotización</h1>
-          <p>Envíanos el OEM, modelo del vehículo, año y motor para confirmar compatibilidad.</p>
+          <div className="section-title">
+            <h1>Contacto</h1>
+            <p>Mándanos el OEM, vehículo, año y motor para confirmar compatibilidad.</p>
+          </div>
         </div>
 
         <form className="form">
@@ -13,16 +14,9 @@ export default function ContactoPage() {
           <input placeholder="Empresa o taller" />
           <input placeholder="WhatsApp" />
           <input placeholder="Correo" />
-          <textarea placeholder="OEM, vehículo, año, motor o sensor que necesitas" rows={6}></textarea>
-          <button className="cta" type="button">Enviar solicitud</button>
+          <textarea rows={6} placeholder="Describe el sensor que necesitas" />
+          <button className="btn" type="button">Enviar solicitud</button>
         </form>
-
-        <div style={{ marginTop: "38px" }} className="card">
-          <h3>Cobertura</h3>
-          <p>USA · México · Guatemala · El Salvador · Honduras · Nicaragua</p>
-          <p><strong>WhatsApp:</strong> +503 7604 8817</p>
-          <p><strong>Email:</strong> ventas@sensorpro.com</p>
-        </div>
       </div>
     </main>
   );

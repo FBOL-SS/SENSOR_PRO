@@ -3,52 +3,46 @@ import { products } from "@/data/products";
 
 export default function CompatibilidadPage() {
   return (
-    <main className="section light">
+    <main className="section">
       <div className="container">
         <div className="section-head">
-          <span className="badge">Compatibilidad</span>
-          <h1>Buscador de compatibilidad</h1>
-          <p>Busca por OEM, marca, modelo, año, motor o tipo de sensor. Esta versión usa datos frontend listos para escalar con el CSV completo.</p>
+          <div className="section-title">
+            <h1>Buscar compatibilidad</h1>
+            <p>Encuentra sensores por OEM, marca, modelo, año, motor o tipo.</p>
+          </div>
         </div>
 
-        <div className="search-panel">
-          <input placeholder="Buscar por OEM, modelo o sensor..." />
-          <select>
-            <option>Marca</option>
-            <option>Hyundai</option>
-            <option>Kia</option>
-          </select>
-          <select>
-            <option>Tipo de sensor</option>
-            <option>MAF</option>
-            <option>CMP</option>
-            <option>CKP</option>
-          </select>
+        <div className="compat-panel">
+          <div className="filters">
+            <input placeholder="OEM, modelo o sensor..." />
+            <select><option>Marca</option><option>Hyundai</option><option>Kia</option></select>
+            <select><option>Tipo</option><option>MAF</option><option>CMP</option><option>CKP</option></select>
+            <button className="btn" type="button">Buscar</button>
+          </div>
         </div>
 
         <div className="grid grid-3">
           {products.map((product) => (
-            <article className="card product-card" key={product.handle}>
+            <article className="product-card" key={product.handle}>
               <img src={product.image} alt={product.name} />
               <span className="badge">{product.type}</span>
               <h3>{product.name}</h3>
-              <p><strong>OEM:</strong> {product.oem}</p>
-
-              <div className="compat-block">
+              <div className="oem">OEM: <strong>{product.oem}</strong></div>
+              <div className="compat-list">
                 {product.compatibility.map((brand) => (
                   <div className="compat-brand" key={brand.brand}>
                     <strong>{brand.brand}</strong>
                     <ul>
-                      {brand.models.slice(0, 3).map((m) => (
-                        <li key={`${brand.brand}-${m.model}`}>{m.model} {m.years} {m.engine ? `· ${m.engine}` : ""}</li>
+                      {brand.models.map((m) => (
+                        <li key={`${brand.brand}-${m.model}-${m.years}`}>{m.model} {m.years} {m.engine ? `· ${m.engine}` : ""}</li>
                       ))}
                     </ul>
                   </div>
                 ))}
               </div>
-
-              <div className="actions">
-                <Link className="cta" href={`/producto/${product.handle}`}>Ver detalle</Link>
+              <div className="product-actions">
+                <Link className="btn" href={`/producto/${product.handle}`}>Ver detalle</Link>
+                <a className="btn outline" href={`https://wa.me/50376048817?text=Hola,%20quiero%20cotizar%20el%20sensor%20OEM%20${product.oem}`} target="_blank">Cotizar</a>
               </div>
             </article>
           ))}

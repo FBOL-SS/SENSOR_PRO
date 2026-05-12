@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import WhatsappFloat from "@/components/WhatsappFloat";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 export const metadata: Metadata = {
   title: "SensorPro Auto Parts | Sensores Automotrices",
-  description: "Sensores automotrices OEM y aftermarket para talleres, refaccionarias y distribuidores."
+  description: "Refaccionaria especializada en sensores automotrices OEM y aftermarket."
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -16,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         {children}
         <Footer />
-        <WhatsappFloat />
+        <WhatsAppFloat />
       </body>
     </html>
   );

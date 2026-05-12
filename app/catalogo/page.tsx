@@ -1,37 +1,31 @@
-import Link from "next/link";
-import { categories, products } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
+import { categories, products } from "@/data/products";
 
 export default function CatalogoPage() {
   return (
-    <main>
-      <section className="section light">
-        <div className="container">
-          <div className="section-head">
-            <span className="badge">Catálogo</span>
-            <h1>Catálogo de sensores automotrices</h1>
-            <p>Explora categorías y productos disponibles para talleres, refaccionarias y distribuidores.</p>
-          </div>
-          <div className="grid grid-4">
-            {categories.map((cat) => (
-              <div className="card" key={cat}>
-                <h3>{cat}</h3>
-                <p>Aplicaciones OEM y aftermarket para diferentes marcas y motores.</p>
-                <Link className="btn-secondary" href="/compatibilidad">Ver compatibilidad</Link>
-              </div>
-            ))}
+    <main className="section">
+      <div className="container">
+        <div className="section-head">
+          <div className="section-title">
+            <h1>Catálogo de sensores</h1>
+            <p>Compra por categoría o revisa los productos disponibles.</p>
           </div>
         </div>
-      </section>
 
-      <section className="section">
-        <div className="container">
-          <h2>Productos</h2>
-          <div className="grid grid-3">
-            {products.map((p) => <ProductCard key={p.handle} product={p} />)}
-          </div>
+        <div className="grid grid-4" style={{ marginBottom: 32 }}>
+          {categories.map((cat) => (
+            <div className="category-card" key={cat.name}>
+              <div className="category-icon">{cat.icon}</div>
+              <h3>{cat.name}</h3>
+              <p>{cat.label}</p>
+            </div>
+          ))}
         </div>
-      </section>
+
+        <div className="grid grid-3">
+          {products.map((p) => <ProductCard key={p.handle} product={p} />)}
+        </div>
+      </div>
     </main>
   );
 }

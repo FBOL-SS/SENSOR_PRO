@@ -1,25 +1,19 @@
 export default function CalidadPage() {
   return (
-    <main className="section light">
+    <main className="section">
       <div className="container">
         <div className="section-head">
-          <span className="badge">Calidad</span>
-          <h1>Calidad, compatibilidad y soporte técnico</h1>
-          <p>La prioridad es reducir errores de aplicación y ofrecer sensores confiables para reemplazo profesional.</p>
+          <div className="section-title">
+            <h1>Calidad y compatibilidad</h1>
+            <p>El objetivo es vender el sensor correcto desde la primera vez.</p>
+          </div>
         </div>
 
         <div className="grid grid-3">
-          {[
-            "Compatibilidad OEM",
-            "Productos verificados",
-            "Garantía limitada",
-            "Control de calidad",
-            "Soporte técnico",
-            "Identificación por aplicación"
-          ].map((item) => (
-            <div className="card" key={item}>
+          {["Compatibilidad OEM", "Productos verificados", "Garantía limitada", "Control de calidad", "Soporte técnico", "Aplicación correcta"].map((item) => (
+            <div className="category-card" key={item}>
               <h3>{item}</h3>
-              <p>Procesos enfocados en confirmar aplicación, tipo de sensor y número OEM antes de vender.</p>
+              <p>Validamos información técnica para reducir errores de compra.</p>
             </div>
           ))}
         </div>

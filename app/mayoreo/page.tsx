@@ -1,40 +1,31 @@
 export default function MayoreoPage() {
   return (
-    <main className="section light">
+    <main className="section">
       <div className="container">
         <div className="section-head">
-          <span className="badge">Mayoreo</span>
-          <h1>Programa para refaccionarias, talleres y distribuidores</h1>
-          <p>Precios por volumen, soporte por OEM y abastecimiento recurrente para negocios automotrices.</p>
+          <div className="section-title">
+            <h1>Mayoreo para refaccionarias y talleres</h1>
+            <p>Precios por volumen, soporte por OEM y atención rápida.</p>
+          </div>
         </div>
 
-        <div className="grid grid-3">
-          {[
-            "Precios por volumen",
-            "Soporte para identificación OEM",
-            "Envíos a USA, México y Centroamérica",
-            "Catálogo por compatibilidad",
-            "Atención por WhatsApp",
-            "Cotizaciones rápidas"
-          ].map((item) => (
-            <div className="card" key={item}>
+        <div className="grid grid-3" style={{ marginBottom: 28 }}>
+          {["Precios por volumen", "Soporte OEM", "Envíos regionales", "Cotizaciones rápidas", "Catálogo técnico", "Atención por WhatsApp"].map((item) => (
+            <div className="category-card" key={item}>
               <h3>{item}</h3>
-              <p>Solución pensada para operaciones que necesitan comprar con claridad, velocidad y control.</p>
+              <p>Solución pensada para compradores recurrentes.</p>
             </div>
           ))}
         </div>
 
-        <section style={{ marginTop: "42px" }}>
-          <h2>Solicitar cuenta mayorista</h2>
-          <form className="form">
-            <input placeholder="Nombre de empresa" />
-            <input placeholder="Nombre de contacto" />
-            <input placeholder="WhatsApp" />
-            <input placeholder="Correo" />
-            <textarea placeholder="Cuéntanos qué sensores necesitas" rows={5}></textarea>
-            <button className="cta" type="button">Enviar solicitud</button>
-          </form>
-        </section>
+        <form className="form">
+          <input placeholder="Nombre de empresa" />
+          <input placeholder="Nombre de contacto" />
+          <input placeholder="WhatsApp" />
+          <input placeholder="Correo" />
+          <textarea rows={5} placeholder="¿Qué sensores necesitas?" />
+          <button className="btn" type="button">Solicitar cuenta mayorista</button>
+        </form>
       </div>
     </main>
   );
