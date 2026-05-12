@@ -1,11 +1,11 @@
 :root {
-  --red: #d71920;
-  --red-dark: #9f1118;
-  --orange: #ff8a00;
-  --yellow: #ffc20e;
-  --blue: #005bbb;
-  --navy: #111827;
-  --black: #0b0f17;
+  --primary: #005bbb;
+  --primary-dark: #003f82;
+  --primary-soft: #eaf2ff;
+  --accent: #ff8a00;
+  --yellow: #fbbf24;
+  --navy: #0b1220;
+  --black: #07101f;
   --gray: #f3f4f6;
   --line: #e5e7eb;
   --text: #111827;
@@ -15,25 +15,16 @@
 
 * { box-sizing: border-box; }
 
-html, body {
-  margin: 0;
-  padding: 0;
-}
+html, body { margin: 0; padding: 0; }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: var(--text);
-  background: #f5f5f5;
+  background: #f5f7fb;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button, input, select, textarea {
-  font-family: inherit;
-}
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font-family: inherit; }
 
 .container {
   width: min(1220px, calc(100% - 28px));
@@ -55,7 +46,7 @@ button, input, select, textarea {
 }
 
 .header {
-  background: var(--red);
+  background: var(--primary);
   color: white;
   position: sticky;
   top: 0;
@@ -82,12 +73,10 @@ button, input, select, textarea {
   font-weight: 950;
   letter-spacing: -0.04em;
   line-height: 0.92;
-  border-bottom: 4px solid var(--yellow);
+  border-bottom: 4px solid var(--accent);
 }
 
-.logo span {
-  color: var(--yellow);
-}
+.logo span { color: #93c5fd; }
 
 .logo small {
   color: #d1d5db;
@@ -102,7 +91,7 @@ button, input, select, textarea {
   background: white;
   border-radius: 5px;
   overflow: hidden;
-  border: 3px solid var(--yellow);
+  border: 3px solid #93c5fd;
 }
 
 .search-main input {
@@ -115,7 +104,7 @@ button, input, select, textarea {
 
 .search-main button {
   border: 0;
-  background: var(--yellow);
+  background: #93c5fd;
   color: var(--black);
   padding: 0 22px;
   font-weight: 900;
@@ -132,7 +121,7 @@ button, input, select, textarea {
 }
 
 .menu-bar {
-  background: #b9141a;
+  background: var(--primary-dark);
   color: white;
 }
 
@@ -149,15 +138,13 @@ button, input, select, textarea {
   white-space: nowrap;
 }
 
-.menu-links a:hover {
-  background: rgba(0,0,0,0.2);
-}
+.menu-links a:hover { background: rgba(0,0,0,0.2); }
 
 .hero {
   background:
-    linear-gradient(90deg, rgba(17,24,39,0.94), rgba(17,24,39,0.70)),
-    radial-gradient(circle at 84% 50%, rgba(255,194,14,0.26), transparent 34%),
-    #111827;
+    linear-gradient(90deg, rgba(7,16,31,0.96), rgba(0,91,187,0.72)),
+    radial-gradient(circle at 84% 50%, rgba(147,197,253,0.34), transparent 34%),
+    #0b1220;
   color: white;
   padding: 42px 0;
 }
@@ -178,7 +165,7 @@ button, input, select, textarea {
 
 .hero p {
   font-size: 18px;
-  color: #d1d5db;
+  color: #dbeafe;
   line-height: 1.55;
   max-width: 690px;
 }
@@ -188,26 +175,23 @@ button, input, select, textarea {
   color: var(--text);
   border-radius: 8px;
   padding: 20px;
-  border-top: 8px solid var(--yellow);
+  border-top: 8px solid #93c5fd;
   box-shadow: 0 22px 50px rgba(0,0,0,0.28);
 }
 
-.vehicle-finder {
-  display: grid;
-  gap: 12px;
-}
-
-.vehicle-finder h2 {
-  margin: 0 0 4px;
-  font-size: 24px;
-}
+.vehicle-finder { display: grid; gap: 12px; }
+.vehicle-finder h2 { margin: 0 0 4px; font-size: 24px; }
 
 .vehicle-finder select,
-.vehicle-finder input {
+.vehicle-finder input,
+.filters input,
+.filters select,
+.form input,
+.form textarea {
   width: 100%;
-  padding: 14px;
+  padding: 13px 14px;
   border: 1px solid #d1d5db;
-  border-radius: 4px;
+  border-radius: 5px;
   background: white;
   color: var(--text);
   font-size: 15px;
@@ -220,35 +204,23 @@ button, input, select, textarea {
   border: 0;
   border-radius: 4px;
   padding: 14px 18px;
-  background: var(--red);
+  background: var(--primary);
   color: white;
   font-weight: 900;
   cursor: pointer;
   text-align: center;
 }
 
-.btn.yellow {
-  background: var(--yellow);
-  color: var(--black);
-}
-
-.btn.black {
-  background: var(--black);
-  color: white;
-}
+.btn.accent { background: var(--accent); color: var(--black); }
+.btn.black { background: var(--black); color: white; }
 
 .btn.outline {
   background: white;
-  color: var(--red);
-  border: 2px solid var(--red);
+  color: var(--primary);
+  border: 2px solid var(--primary);
 }
 
-.actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 22px;
-}
+.actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
 
 .trust-row {
   background: white;
@@ -265,19 +237,10 @@ button, input, select, textarea {
   border-right: 1px solid var(--line);
 }
 
-.trust-item strong {
-  display: block;
-  font-size: 15px;
-}
+.trust-item strong { display: block; font-size: 15px; }
+.trust-item span { color: var(--muted); font-size: 13px; }
 
-.trust-item span {
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.section {
-  padding: 42px 0;
-}
+.section { padding: 42px 0; }
 
 .section-head {
   display: flex;
@@ -299,23 +262,22 @@ button, input, select, textarea {
   margin: 8px 0 0;
 }
 
-.grid {
-  display: grid;
-  gap: 18px;
-}
+.grid { display: grid; gap: 18px; }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
 
-.grid-4 {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.grid-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.category-card {
+.category-card,
+.product-card,
+.compat-panel,
+.detail-box,
+.detail-image,
+.form {
   background: white;
   border: 1px solid var(--line);
   border-radius: 8px;
+}
+
+.category-card {
   padding: 20px;
   transition: .18s ease;
   border-bottom: 5px solid transparent;
@@ -323,35 +285,20 @@ button, input, select, textarea {
 
 .category-card:hover {
   transform: translateY(-3px);
-  border-bottom-color: var(--red);
+  border-bottom-color: var(--primary);
   box-shadow: 0 12px 28px rgba(0,0,0,0.08);
 }
 
-.category-icon {
-  font-size: 34px;
-  margin-bottom: 12px;
-}
-
-.category-card h3 {
-  margin: 0 0 6px;
-}
-
-.category-card p {
-  margin: 0;
-  color: var(--muted);
-}
+.category-icon { font-size: 34px; margin-bottom: 12px; }
+.category-card h3 { margin: 0 0 6px; }
+.category-card p { margin: 0; color: var(--muted); }
 
 .product-card {
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 8px;
   padding: 16px;
   position: relative;
 }
 
-.product-card:hover {
-  box-shadow: 0 12px 30px rgba(0,0,0,0.09);
-}
+.product-card:hover { box-shadow: 0 12px 30px rgba(0,0,0,0.09); }
 
 .product-card img {
   width: 100%;
@@ -363,15 +310,12 @@ button, input, select, textarea {
   padding: 18px;
 }
 
-.product-card h3 {
-  margin: 14px 0 6px;
-  font-size: 19px;
-}
+.product-card h3 { margin: 14px 0 6px; font-size: 19px; }
 
 .price {
   font-size: 24px;
   font-weight: 950;
-  color: var(--red);
+  color: var(--primary);
   margin: 10px 0;
 }
 
@@ -379,8 +323,8 @@ button, input, select, textarea {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: #eef2ff;
-  color: #1d4ed8;
+  background: var(--primary-soft);
+  color: var(--primary-dark);
   border-radius: 999px;
   padding: 6px 10px;
   font-weight: 900;
@@ -393,10 +337,7 @@ button, input, select, textarea {
   font-size: 13px;
 }
 
-.oem {
-  color: var(--muted);
-  font-size: 14px;
-}
+.oem { color: var(--muted); font-size: 14px; }
 
 .product-actions {
   display: grid;
@@ -406,7 +347,7 @@ button, input, select, textarea {
 }
 
 .banner {
-  background: linear-gradient(90deg, var(--black), #374151);
+  background: linear-gradient(90deg, var(--black), var(--primary-dark));
   color: white;
   border-radius: 10px;
   padding: 26px;
@@ -416,19 +357,10 @@ button, input, select, textarea {
   align-items: center;
 }
 
-.banner h2 {
-  margin: 0;
-  font-size: 30px;
-}
-
-.banner p {
-  color: #d1d5db;
-}
+.banner h2 { margin: 0; font-size: 30px; }
+.banner p { color: #dbeafe; }
 
 .compat-panel {
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 10px;
   padding: 20px;
   margin-bottom: 20px;
 }
@@ -439,24 +371,7 @@ button, input, select, textarea {
   gap: 12px;
 }
 
-.filters input,
-.filters select,
-.form input,
-.form textarea {
-  width: 100%;
-  padding: 13px 14px;
-  border: 1px solid #d1d5db;
-  border-radius: 5px;
-  background: white;
-  color: var(--text);
-  font-size: 15px;
-}
-
-.compat-list {
-  display: grid;
-  gap: 10px;
-  margin-top: 12px;
-}
+.compat-list { display: grid; gap: 10px; margin-top: 12px; }
 
 .compat-brand {
   background: #f9fafb;
@@ -467,7 +382,7 @@ button, input, select, textarea {
 
 .compat-brand strong {
   display: block;
-  color: var(--red);
+  color: var(--primary);
   margin-bottom: 6px;
 }
 
@@ -485,25 +400,9 @@ button, input, select, textarea {
   align-items: start;
 }
 
-.detail-image {
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 24px;
-}
-
-.detail-image img {
-  width: 100%;
-  height: 360px;
-  object-fit: contain;
-}
-
-.detail-box {
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 24px;
-}
+.detail-image { padding: 24px; }
+.detail-image img { width: 100%; height: 360px; object-fit: contain; }
+.detail-box { padding: 24px; }
 
 .detail-box h1 {
   margin: 10px 0;
@@ -515,10 +414,27 @@ button, input, select, textarea {
   display: grid;
   gap: 12px;
   max-width: 760px;
+  padding: 22px;
+}
+
+.stat-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.stat-card {
   background: white;
   border: 1px solid var(--line);
-  padding: 22px;
-  border-radius: 10px;
+  border-radius: 8px;
+  padding: 18px;
+}
+
+.stat-card strong {
+  font-size: 34px;
+  color: var(--primary);
+  display: block;
 }
 
 .footer {
@@ -534,9 +450,7 @@ button, input, select, textarea {
   gap: 28px;
 }
 
-.footer p {
-  color: #d1d5db;
-}
+.footer p { color: #d1d5db; }
 
 .whatsapp-float {
   position: fixed;
@@ -558,9 +472,7 @@ button, input, select, textarea {
     padding: 14px 0;
   }
 
-  .nav-action {
-    text-align: center;
-  }
+  .nav-action { text-align: center; }
 
   .hero-grid,
   .grid-4,
@@ -569,17 +481,13 @@ button, input, select, textarea {
   .filters,
   .footer-grid,
   .product-detail,
-  .banner {
+  .banner,
+  .stat-cards {
     grid-template-columns: 1fr;
   }
 
-  .menu-links a {
-    padding: 12px 13px;
-  }
-
-  .product-actions {
-    grid-template-columns: 1fr;
-  }
+  .menu-links a { padding: 12px 13px; }
+  .product-actions { grid-template-columns: 1fr; }
 
   .section-head {
     align-items: flex-start;

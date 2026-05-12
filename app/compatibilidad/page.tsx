@@ -16,7 +16,7 @@ export default function CompatibilidadPage() {
           <div className="filters">
             <input placeholder="OEM, modelo o sensor..." />
             <select><option>Marca</option><option>Hyundai</option><option>Kia</option></select>
-            <select><option>Tipo</option><option>MAF</option><option>CMP</option><option>CKP</option></select>
+            <select><option>Tipo</option><option>MAF</option><option>CMP</option><option>CKP</option><option>MAP</option><option>VSS</option><option>TPS</option><option>WTS</option></select>
             <button className="btn" type="button">Buscar</button>
           </div>
         </div>
@@ -28,13 +28,14 @@ export default function CompatibilidadPage() {
               <span className="badge">{product.type}</span>
               <h3>{product.name}</h3>
               <div className="oem">OEM: <strong>{product.oem}</strong></div>
+              <div className="stock">● {product.availability} · {product.stock} pcs</div>
               <div className="compat-list">
                 {product.compatibility.map((brand) => (
                   <div className="compat-brand" key={brand.brand}>
                     <strong>{brand.brand}</strong>
                     <ul>
-                      {brand.models.map((m) => (
-                        <li key={`${brand.brand}-${m.model}-${m.years}`}>{m.model} {m.years} {m.engine ? `· ${m.engine}` : ""}</li>
+                      {brand.models.slice(0, 5).map((m) => (
+                        <li key={`${brand.brand}-${m.model}-${m.years}`}>{m.model} {m.years}</li>
                       ))}
                     </ul>
                   </div>

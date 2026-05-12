@@ -20,7 +20,7 @@ export default function ProductPage({ params }: { params: { handle: string } }) 
           <span className="badge">{product.type}</span>
           <h1>{product.name}</h1>
           <div className="oem">OEM: <strong>{product.oem}</strong></div>
-          <div className="stock">● {product.availability}</div>
+          <div className="stock">● {product.availability} · {product.stock} pcs</div>
           <div className="price">{product.price}</div>
           <p>{product.description}</p>
 
@@ -35,7 +35,7 @@ export default function ProductPage({ params }: { params: { handle: string } }) 
                 <strong>{brand.brand}</strong>
                 <ul>
                   {brand.models.map((m) => (
-                    <li key={`${brand.brand}-${m.model}-${m.years}`}>{m.model} · {m.years} {m.engine ? `· ${m.engine}` : ""}</li>
+                    <li key={`${brand.brand}-${m.model}-${m.years}`}>{m.model} · {m.years}</li>
                   ))}
                 </ul>
               </div>

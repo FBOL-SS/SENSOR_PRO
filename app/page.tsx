@@ -1,6 +1,6 @@
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
-import { categories, products } from "@/data/products";
+import { categories, products, inventorySummary } from "@/data/products";
 
 export default function HomePage() {
   return (
@@ -9,9 +9,9 @@ export default function HomePage() {
         <div className="container hero-grid">
           <div>
             <h1>Encuentra el sensor correcto para tu vehículo</h1>
-            <p>Busca por número OEM, marca, modelo, año o tipo de sensor. Sensores para talleres, refaccionarias y distribuidores.</p>
+            <p>Busca por número OEM, marca, modelo, año o tipo de sensor. Catálogo inicial con inventario real cargado.</p>
             <div className="actions">
-              <Link className="btn yellow" href="/compatibilidad">Buscar compatibilidad</Link>
+              <Link className="btn accent" href="/compatibilidad">Buscar compatibilidad</Link>
               <Link className="btn" href="/catalogo">Ver catálogo</Link>
             </div>
           </div>
@@ -31,10 +31,10 @@ export default function HomePage() {
 
       <section className="trust-row">
         <div className="container trust-grid">
-          <div className="trust-item"><strong>Compra fácil</strong><span>Busca por OEM o vehículo</span></div>
-          <div className="trust-item"><strong>Mayoreo disponible</strong><span>Para talleres y refaccionarias</span></div>
-          <div className="trust-item"><strong>Soporte técnico</strong><span>Confirmamos compatibilidad</span></div>
-          <div className="trust-item"><strong>Envíos regionales</strong><span>USA, México y Centroamérica</span></div>
+          <div className="trust-item"><strong>{inventorySummary.totalProducts} SKUs</strong><span>Inventario cargado</span></div>
+          <div className="trust-item"><strong>{inventorySummary.totalUnits} piezas</strong><span>Unidades registradas</span></div>
+          <div className="trust-item"><strong>Hyundai / Kia</strong><span>Compatibilidad principal</span></div>
+          <div className="trust-item"><strong>Soporte técnico</strong><span>Confirmamos aplicación</span></div>
         </div>
       </section>
 
@@ -43,7 +43,7 @@ export default function HomePage() {
           <div className="section-head">
             <div className="section-title">
               <h2>Comprar por categoría</h2>
-              <p>Sensores organizados para encontrar rápido lo que necesitás.</p>
+              <p>Sensores organizados para encontrar rápido lo que necesitas.</p>
             </div>
             <Link className="btn outline" href="/catalogo">Ver todo</Link>
           </div>
@@ -64,10 +64,10 @@ export default function HomePage() {
         <div className="container">
           <div className="banner">
             <div>
-              <h2>¿Compras para taller o refaccionaria?</h2>
-              <p>Solicita precios por volumen y soporte para identificar sensores por OEM.</p>
+              <h2>Inventario real disponible</h2>
+              <p>Ya cargamos {inventorySummary.totalProducts} productos del CSV con stock por SKU/OEM.</p>
             </div>
-            <Link className="btn yellow" href="/mayoreo">Ver mayoreo</Link>
+            <Link className="btn accent" href="/inventario">Ver inventario</Link>
           </div>
         </div>
       </section>
@@ -77,12 +77,12 @@ export default function HomePage() {
           <div className="section-head">
             <div className="section-title">
               <h2>Productos destacados</h2>
-              <p>Una parte del catálogo inicial con compatibilidad.</p>
+              <p>Vista rápida de sensores con stock y compatibilidad.</p>
             </div>
           </div>
 
           <div className="grid grid-3">
-            {products.map((p) => <ProductCard key={p.handle} product={p} />)}
+            {products.slice(0, 9).map((p) => <ProductCard key={p.handle} product={p} />)}
           </div>
         </div>
       </section>

@@ -10,7 +10,7 @@ export default function ProductCard({ product }: { product: SensorProduct }) {
       </div>
       <h3>{product.name}</h3>
       <div className="oem">OEM: <strong>{product.oem}</strong></div>
-      <div className="stock">● {product.availability}</div>
+      <div className="stock">● {product.availability} · {product.stock} pcs</div>
       <div className="price">{product.price}</div>
       <p>{product.description}</p>
       <div className="product-actions">

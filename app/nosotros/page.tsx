@@ -14,7 +14,7 @@ export default function NosotrosPage() {
             <h2>Fácil, técnico y directo</h2>
             <p>Ayudamos a identificar sensores por OEM, marca, modelo, año y motor.</p>
           </div>
-          <a className="btn yellow" href="https://wa.me/50376048817" target="_blank">Hablar por WhatsApp</a>
+          <a className="btn accent" href="https://wa.me/50376048817" target="_blank">Hablar por WhatsApp</a>
         </div>
       </div>
     </main>

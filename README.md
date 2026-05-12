@@ -1,6 +1,8 @@
-# SensorPro AutoZone Style
+# SensorPro Blue Inventory
 
-Sitio multipágina estilo refaccionaria: claro, rápido y fácil de usar.
+Sitio multipágina estilo refaccionaria fácil de usar, en azul, con inventario real del CSV.
+
+Productos cargados: 43
 
 ## Instalar
 

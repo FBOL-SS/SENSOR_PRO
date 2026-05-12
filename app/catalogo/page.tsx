@@ -8,7 +8,7 @@ export default function CatalogoPage() {
         <div className="section-head">
           <div className="section-title">
             <h1>Catálogo de sensores</h1>
-            <p>Compra por categoría o revisa los productos disponibles.</p>
+            <p>Productos reales cargados desde el CSV.</p>
           </div>
         </div>
 

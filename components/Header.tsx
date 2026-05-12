@@ -31,6 +31,7 @@ export default function Header() {
           <div className="container menu-links">
             <Link href="/catalogo">Catálogo</Link>
             <Link href="/compatibilidad">Buscar compatibilidad</Link>
+            <Link href="/inventario">Inventario</Link>
             <Link href="/mayoreo">Mayoreo</Link>
             <Link href="/calidad">Calidad</Link>
             <Link href="/nosotros">Nosotros</Link>
