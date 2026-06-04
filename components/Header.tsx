@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BrandLogo from "@/components/BrandLogo";
 
 export default function Header() {
   return (
