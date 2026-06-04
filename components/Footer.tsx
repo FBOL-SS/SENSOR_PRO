@@ -3,7 +3,9 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer-grid">
         <div>
-          <div className="logo">Sensor<span>Pro</span><small>Auto Parts</small></div>
+          <div className="logo footer-logo" aria-label="AUTOLAB">
+            <img src="/autolab-logo.svg" alt="AUTOLAB" />
+          </div>
           <p>Tecnología OEM para diagnóstico automotriz.</p>
         </div>
         <div>
@@ -13,7 +15,7 @@ export default function Footer() {
         <div>
           <h3>Contacto</h3>
           <p>WhatsApp: +503 7604 8817</p>
-          <p>ventas@sensorpro.com</p>
+          <p>ventas@autolab.com</p>
         </div>
       </div>
     </footer>
