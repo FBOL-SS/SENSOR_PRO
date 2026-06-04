@@ -12,9 +12,8 @@ export default function Header() {
 
       <header className="header">
         <div className="container nav">
-          <Link href="/" className="logo">
-            Sensor<span>Pro</span>
-            <small>Auto Parts</small>
+          <Link href="/" className="logo" aria-label="SENSOR PRO inicio">
+            <img src="/sensor-pro-logo.svg" alt="SENSOR PRO" />
           </Link>
 
           <form className="search-main">
