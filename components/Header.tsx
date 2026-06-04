@@ -5,7 +5,7 @@ export default function Header() {
     <>
       <div className="top-strip">
         <div className="container top-strip-inner">
-          <span>Envíos a USA, México y Centroamérica</span>
+          <span>Envíos a todo El Salvador gratis por compras de $45.00USD</span>
           <span>Atención por WhatsApp: +503 7604 8817</span>
         </div>
       </div>
