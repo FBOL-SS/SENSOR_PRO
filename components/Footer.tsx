@@ -15,7 +15,7 @@ export default function Footer() {
         <div>
           <h3>Contacto</h3>
           <p>WhatsApp: +503 7604 8817</p>
-          <p>ventas@sensorpro.com</p>
+          <p>ventas@autolab.com</p>
         </div>
       </div>
     </footer>
