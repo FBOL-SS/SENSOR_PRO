@@ -64,27 +64,73 @@ button, input, select, textarea { font-family: inherit; }
 
 .logo {
   display: inline-flex;
-  flex-direction: column;
+  align-items: center;
   background: var(--black);
   color: white;
-  padding: 10px 14px;
-  border-radius: 4px;
-  font-size: 23px;
-  font-weight: 950;
-  letter-spacing: -0.04em;
-  line-height: 0.92;
+  padding: 12px 16px;
+  border-radius: 8px;
   border-bottom: 4px solid var(--accent);
+  box-shadow: 0 10px 24px rgba(2,8,23,0.22);
 }
 
-.logo span { color: #93c5fd; }
-
-.logo small {
-  color: #d1d5db;
-  margin-top: 6px;
-  font-size: 10px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+.brand-logo-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
 }
+
+.brand-emblem {
+  position: relative;
+  display: inline-flex;
+  width: 58px;
+  height: 58px;
+  border: 4px solid white;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 5px var(--black), inset 0 0 0 8px white;
+}
+
+.brand-emblem::before,
+.brand-emblem::after {
+  content: "";
+  position: absolute;
+  background: white;
+  border-radius: 999px;
+}
+
+.brand-emblem::before {
+  left: 7px;
+  right: 7px;
+  top: 50%;
+  height: 4px;
+  transform: translateY(-50%);
+}
+
+.brand-emblem::after {
+  top: 7px;
+  bottom: 7px;
+  left: 50%;
+  width: 4px;
+  transform: translateX(-50%);
+}
+
+.brand-emblem-core {
+  position: absolute;
+  inset: 18px;
+  z-index: 1;
+  background: var(--black);
+  border: 4px solid white;
+  border-radius: 50%;
+}
+
+.brand-word {
+  color: white;
+  font-size: 34px;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+.footer-logo .brand-word { font-size: 32px; }
 
 .search-main {
   display: flex;
@@ -244,7 +290,7 @@ button, input, select, textarea { font-family: inherit; }
 
 .section-head {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   justify-content: space-between;
   gap: 16px;
   margin-bottom: 20px;

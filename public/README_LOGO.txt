@@ -1,1 +1,1 @@
-Replace this with your AUTOLAB logo PNG as /public/autolab-logo.png
+El logo principal se renderiza directamente como marca AUTOLAB en el header y footer para evitar caché de imágenes antiguas.
