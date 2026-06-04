@@ -1,5 +1,4 @@
 import Link from "next/link";
-import BrandLogo from "@/components/BrandLogo";
 
 export default function Header() {
   return (
@@ -13,8 +12,8 @@ export default function Header() {
 
       <header className="header">
         <div className="container nav">
-          <Link href="/" className="logo" aria-label="SENSOR PRO inicio">
-            <img src="/sensor-pro-logo.svg" alt="SENSOR PRO" />
+          <Link href="/" className="logo" aria-label="AUTOLAB inicio">
+            <img src="/autolab-logo.svg" alt="AUTOLAB" />
           </Link>
 
           <form className="search-main">
@@ -22,7 +21,12 @@ export default function Header() {
             <button type="button">BUSCAR</button>
           </form>
 
-          <a className="nav-action" href="https://wa.me/50376048817" target="_blank">
+          <a
+            className="nav-action"
+            href="https://wa.me/50376048817"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Cotizar ahora
           </a>
         </div>
