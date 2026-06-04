@@ -12,8 +12,8 @@ export default function Header() {
 
       <header className="header">
         <div className="container nav">
-          <Link href="/" className="logo" aria-label="AUTOLAB inicio">
-            <img src="/autolab-logo.svg" alt="AUTOLAB" />
+          <Link href="/" className="logo" aria-label="SENSOR PRO inicio">
+            <img src="/sensor-pro-logo.svg" alt="SENSOR PRO" />
           </Link>
 
           <form className="search-main">

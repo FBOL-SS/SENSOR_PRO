@@ -3,8 +3,8 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer-grid">
         <div>
-          <div className="logo footer-logo" aria-label="AUTOLAB">
-            <img src="/autolab-logo.svg" alt="AUTOLAB" />
+          <div className="logo footer-logo" aria-label="SENSOR PRO">
+            <img src="/sensor-pro-logo.svg" alt="SENSOR PRO" />
           </div>
           <p>Tecnología OEM para diagnóstico automotriz.</p>
         </div>
