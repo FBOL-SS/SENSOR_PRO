@@ -1,1 +1,1 @@
-Replace this with your AUTOLAB logo PNG as /public/autolab-logo.png
+Logo principal actualizado como /public/sensor-pro-logo.svg para la marca SENSOR PRO.
