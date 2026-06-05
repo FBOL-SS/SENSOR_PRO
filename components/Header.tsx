@@ -6,15 +6,15 @@ export default function Header() {
     <>
       <div className="top-strip">
         <div className="container top-strip-inner">
-          <span>Envíos a USA, México y Centroamérica</span>
+          <span>Envíos a todo El Salvador gratis por compras de $45.00USD</span>
           <span>Atención por WhatsApp: +503 7604 8817</span>
         </div>
       </div>
 
       <header className="header">
         <div className="container nav">
-          <Link href="/" className="logo" aria-label="AUTOLABSV inicio">
-            <BrandLogo />
+          <Link href="/" className="logo" aria-label="AUTOLAB inicio">
+            <img src="/autolab-logo.svg" alt="AUTOLAB" />
           </Link>
 
           <form className="search-main">
@@ -22,7 +22,12 @@ export default function Header() {
             <button type="button">BUSCAR</button>
           </form>
 
-          <a className="nav-action" href="https://wa.me/50376048817" target="_blank">
+          <a
+            className="nav-action"
+            href="https://wa.me/50376048817"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Cotizar ahora
           </a>
         </div>

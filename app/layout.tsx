@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 export const metadata: Metadata = {
-  title: "AUTOLABSV | Sensores Automotrices",
+  title: "SENSOR PRO | Sensores Automotrices",
   description: "Tecnología OEM para diagnóstico automotriz."
 };
 

@@ -4,7 +4,7 @@ export default function NosotrosPage() {
       <div className="container">
         <div className="section-head">
           <div className="section-title">
-            <h1>AUTOLABSV</h1>
+            <h1>SENSOR PRO</h1>
             <p>Refaccionaria especializada en sensores automotrices para talleres, refaccionarias y distribuidores.</p>
           </div>
         </div>

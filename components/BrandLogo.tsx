@@ -4,10 +4,7 @@ export default function BrandLogo() {
       <span className="brand-emblem">
         <span className="brand-emblem-core" />
       </span>
-      <span className="brand-copy">
-        <span className="brand-word">AUTOLAB</span>
-        <span className="brand-suffix">SV</span>
-      </span>
+      <span className="brand-word">AUTOLAB</span>
     </span>
   );
 }
