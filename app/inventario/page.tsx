@@ -46,7 +46,7 @@ export default function InventarioPage() {
                   <td style={{ padding: 12, borderBottom: "1px solid #e5e7eb" }}>{p.name}</td>
                   <td style={{ padding: 12, borderBottom: "1px solid #e5e7eb" }}>{p.type}</td>
                   <td style={{ padding: 12, borderBottom: "1px solid #e5e7eb" }}>{p.stock} pcs</td>
-                  <td style={{ padding: 12, borderBottom: "1px solid #e5e7eb", color: "#005bbb", fontWeight: 900 }}>{p.price}</td>
+                  <td style={{ padding: 12, borderBottom: "1px solid #e5e7eb", color: "#D71920", fontWeight: 900 }}>{p.price}</td>
                   <td style={{ padding: 12, borderBottom: "1px solid #e5e7eb" }}>
                     <Link className="btn" href={`/producto/${p.handle}`}>Ver</Link>
                   </td>
