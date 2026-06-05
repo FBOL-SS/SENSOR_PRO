@@ -19,7 +19,7 @@ export default function CompatibilidadPage() {
       const compatibilityText = product.compatibility
         ?.map((brand) => {
           const models = brand.models
-            ?.map((m) => `${m.model} ${m.years} ${m.engine || ""}`)
+            ?.map((m) => `${m.model} ${m.years}`)
             .join(" ");
 
           return `${brand.brand} ${models}`;
