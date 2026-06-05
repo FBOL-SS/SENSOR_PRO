@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, type CSSProperties } from "react";
 import Link from "next/link";
 import { products, inventorySummary } from "@/data/products";
 
@@ -146,7 +146,7 @@ export default function InventarioPage() {
             <tbody>
               {filteredProducts.length === 0 ? (
                 <tr>
-                  <td style={tdStyle} colSpan="6">
+                  <td style={tdStyle} colSpan={6}>
                     No encontramos productos con esos filtros.
                   </td>
                 </tr>
@@ -157,13 +157,7 @@ export default function InventarioPage() {
                     <td style={tdStyle}>{p.name}</td>
                     <td style={tdStyle}>{p.type}</td>
                     <td style={tdStyle}>{p.stock} pcs</td>
-                    <td
-                      style={{
-                        ...tdStyle,
-                        color: "#005bbb",
-                        fontWeight: 900,
-                      }}
-                    >
+                    <td style={{ ...tdStyle, color: "#D71920", fontWeight: 900 }}>
                       {p.price}
                     </td>
                     <td style={tdStyle}>
@@ -182,13 +176,13 @@ export default function InventarioPage() {
   );
 }
 
-const thStyle = {
+const thStyle: CSSProperties = {
   padding: 12,
   textAlign: "left",
   borderBottom: "1px solid #e5e7eb",
 };
 
-const tdStyle = {
+const tdStyle: CSSProperties = {
   padding: 12,
   borderBottom: "1px solid #e5e7eb",
 };
