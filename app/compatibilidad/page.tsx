@@ -32,6 +32,9 @@ export default function CompatibilidadPage() {
         ${product.oem || ""}
         ${product.type || ""}
         ${product.handle || ""}
+        ${product.description || ""}
+        ${product.tags?.join(" ") || ""}
+        ${product.brands?.join(" ") || ""}
         ${compatibilityText || ""}
       `.toLowerCase();
 
@@ -39,19 +42,25 @@ export default function CompatibilidadPage() {
 
       const matchesBrand =
         !brandFilter ||
+        product.brands?.some(
+          (brand) => brand.toLowerCase() === brandFilter.toLowerCase()
+        ) ||
         product.compatibility?.some(
           (brand) => brand.brand.toLowerCase() === brandFilter.toLowerCase()
         );
 
       const matchesType =
         !typeFilter ||
-        product.type?.toLowerCase() === typeFilter.toLowerCase();
+        (product.type || "").toLowerCase().includes(typeFilter.toLowerCase()) ||
+        product.tags?.some((tag) =>
+          tag.toLowerCase().includes(typeFilter.toLowerCase())
+        );
 
       return matchesSearch && matchesBrand && matchesType;
     });
   }, [query, brandFilter, typeFilter, hasSearched]);
 
-  function handleSearch(e) {
+  function handleSearch(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setHasSearched(true);
   }
@@ -78,7 +87,7 @@ export default function CompatibilidadPage() {
             <input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="OEM, modelo o sensor..."
+              placeholder="OEM, modelo, año o sensor..."
             />
 
             <select
@@ -102,6 +111,11 @@ export default function CompatibilidadPage() {
               <option value="VSS">VSS</option>
               <option value="TPS">TPS</option>
               <option value="WTS">WTS</option>
+              <option value="Temperatura">Temperatura</option>
+              <option value="Velocidad">Velocidad</option>
+              <option value="Árbol de Levas">Árbol de Levas</option>
+              <option value="Cigüeñal">Cigüeñal</option>
+              <option value="Automotriz">Automotriz</option>
             </select>
 
             <button className="btn" type="submit">
@@ -126,7 +140,7 @@ export default function CompatibilidadPage() {
           <div className="empty-results">
             <h3>No encontramos compatibilidades</h3>
             <p>
-              Prueba buscando por número OEM, modelo, marca, motor o tipo de
+              Prueba buscando por número OEM, modelo, marca, año o tipo de
               sensor.
             </p>
           </div>
@@ -170,7 +184,9 @@ export default function CompatibilidadPage() {
 
                   <a
                     className="btn outline"
-                    href={`https://wa.me/50376048817?text=Hola,%20quiero%20cotizar%20el%20sensor%20OEM%20${product.oem}`}
+                    href={`https://wa.me/50376048817?text=Hola,%20quiero%20cotizar%20el%20sensor%20OEM%20${encodeURIComponent(
+                      product.oem
+                    )}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
