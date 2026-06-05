@@ -29,16 +29,23 @@ export default function InventarioPage() {
         ${p.name || ""}
         ${p.type || ""}
         ${p.handle || ""}
+        ${p.description || ""}
+        ${p.tags?.join(" ") || ""}
+        ${p.brands?.join(" ") || ""}
         ${compatibilityText || ""}
       `.toLowerCase();
 
       const matchesSearch = !search || fullText.includes(search);
 
       const matchesType =
-        !typeFilter || p.type?.toLowerCase() === typeFilter.toLowerCase();
+        !typeFilter ||
+        (p.type || "").toLowerCase().includes(typeFilter.toLowerCase());
 
       const matchesBrand =
         !brandFilter ||
+        p.brands?.some(
+          (brand) => brand.toLowerCase() === brandFilter.toLowerCase()
+        ) ||
         p.compatibility?.some(
           (brand) => brand.brand.toLowerCase() === brandFilter.toLowerCase()
         );
@@ -85,7 +92,7 @@ export default function InventarioPage() {
             <input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Buscar SKU/OEM, producto, modelo..."
+              placeholder="Buscar OEM, SKU, producto, modelo, año..."
             />
 
             <select
@@ -100,6 +107,9 @@ export default function InventarioPage() {
               <option value="VSS">VSS</option>
               <option value="TPS">TPS</option>
               <option value="WTS">WTS</option>
+              <option value="Temperatura">Temperatura</option>
+              <option value="Velocidad">Velocidad</option>
+              <option value="Automotriz">Automotriz</option>
             </select>
 
             <select
@@ -124,14 +134,7 @@ export default function InventarioPage() {
         </p>
 
         <div style={{ overflowX: "auto" }}>
-          <table
-            style={{
-              width: "100%",
-              borderCollapse: "collapse",
-              background: "white",
-              border: "1px solid #e5e7eb",
-            }}
-          >
+          <table style={tableStyle}>
             <thead>
               <tr>
                 <th style={thStyle}>OEM</th>
@@ -175,6 +178,13 @@ export default function InventarioPage() {
     </main>
   );
 }
+
+const tableStyle: CSSProperties = {
+  width: "100%",
+  borderCollapse: "collapse",
+  background: "white",
+  border: "1px solid #e5e7eb",
+};
 
 const thStyle: CSSProperties = {
   padding: 12,
